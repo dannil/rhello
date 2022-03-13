@@ -1,3 +1,4 @@
+use std::str;
 use text_io::read;
 
 fn main() {
@@ -11,11 +12,11 @@ fn main() {
 }
 
 fn fibonacci(pos: u64) -> u64 {
-    let mut array = [0, 1];
+    let mut vector = vec![0, 1];
     for _ in 0..pos {
-        let temp: u64 = array[0];
-        array[0] = array[0] + array[1];
-        array[1] = temp;
+        let temp: u64 = vector[1];
+        vector[1] = vector[0] + vector[1];
+        vector[0] = temp;
     }
-    return array[0];
+    return vector[0];
 }
