@@ -1,17 +1,17 @@
 fn fib_sequence(first: u64, second: u64, position: u64) -> u64 {
     let mut vector = vec![first, second];
     for _ in 0..position {
-        (vector[0], vector[1]) = (vector[1], vector[0] + vector[1]);
+        (vector[0], vector[1]) = (vector[1], vector[0] + vector[1])
     }
-    return vector[0];
+    vector[0]
 }
 
 pub fn fibonacci(position: u64) -> u64 {
-    return fib_sequence(0, 1, position);
+    fib_sequence(0, 1, position)
 }
 
 pub fn lucas(position: u64) -> u64 {
-    return fib_sequence(2, 1, position);
+    fib_sequence(2, 1, position)
 }
 
 #[cfg(test)]
